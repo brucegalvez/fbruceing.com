@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald|Roboto");
+
+$main: #f57818;
+$phone: 640px;
+$tablet: 768px;
+$desktop: 1024px;
+
+body {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+  font-weight: 100;
+}
+
+.header {
+  background: black;
+  position: fixed;
+  top: 0;
+  transition: top 0.3s;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5% 0 5%;
+  @media screen and (max-width: $phone) {
+    padding: 1rem;
+  }
+  &__phone {
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+    color: white;
+  }
+  &__logo2 {
+    height: 3rem;
+  }
+}
+
+.masthead {
+  background: #888888;
+  background-image: linear-gradient(to bottom, black, #222222bb),
+    url("../images/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  padding: 15%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: $tablet) {
+    padding: 10%;
+  }
+  &__title {
+    font-size: 3rem;
+    @media screen and (max-width: $phone) {
+      font-size: 2rem;
+    }
+  }
+  &__subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    @media screen and (max-width: $phone) {
+      font-size: 1.125rem;
+    }
+  }
+  &__contactBtn {
+    display: inline-block;
+    background: #f5781811;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    color: $main;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition-duration: 0.1s;
+    border: solid $main 2px;
+    &:hover {
+      background: #f5781833;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.productos {
+  $self: &;
+  padding: 5%;
+  @media screen and (max-width: $phone) {
+    padding: 3rem 1rem 3rem 1rem;
+  }
+  &__descripcion {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  &__cards {
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    @media screen and (max-width: $desktop) {
+      display: block;
+    }
+    #{$self}__categoria__titulo {
+      font-size: 1.5rem;
+    }
+    #{$self}__card {
+      margin: 1rem;
+      transition-duration: 0.5s;
+      &__img {
+        max-width: 100%;
+      }
+      &__titulo {
+        font-size: 1.25rem;
+        margin: 0 0 3rem 0;
+        font-family: "Oswald", sans-serif;
+        @media screen and (max-width: $phone) {
+          margin-top: 0;
+        }
+      }
+      &__lista {
+        @media screen and (max-width: $phone) {
+          margin-bottom: 4rem;
+        }
+      }
+    }
+  }
+}
+
+.experiencia {
+  background: black;
+  color: white;
+  padding: 10%;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: lightgray;
+  &__titulo {
+    font-size: 1.5rem;
+    margin: 3rem 0 3rem 0;
+  }
+  &__lista__item {
+    margin: 4rem 0 4rem 0;
+    transition-duration: 0.5s;
+    &:hover {
+      transform: scale(1.05);
+    }
+    > *:first-child {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: lighter;
+      font-family: "Oswald", sans-serif;
+    }
+    > *:last-child {
+      margin-top: 0;
+      color: lightgray;
+    }
+  }
+}
+
+.features {
+  $self: &;
+  padding: 5%;
+  @media screen and (max-width: $phone) {
+    margin: auto;
+    padding: 3rem 1rem 2rem 1rem;
+  }
+  &__titulo {
+    font-size: 1.5rem;
+  }
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    @media screen and (max-width: $tablet) {
+      flex-direction: column;
+    }
+    #{$self}__card {
+      margin: 0 0.75rem 0 0.75rem;
+      width: 30%;
+      padding: 3rem 1rem 3rem 1rem;
+      background: linear-gradient(45deg, #c7661e, #fb9149);
+      color: white;
+      transition-duration: 0.5s;
+      @media screen and (max-width: $desktop) {
+        margin-bottom: 1rem;
+        width: 100%;
+        padding: 3rem 1rem 3rem 1rem;
+      }
+      &__img {
+        max-height: 5rem;
+      }
+      &__title {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 100;
+        font-family: "Oswald", sans-serif;
+      }
+      &__descripcion {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.contacto {
+  $self: &;
+  padding: 20%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  @media screen and (max-width: $phone) {
+    padding: 10%;
+  }
+  &__cards {
+    display: flex;
+    @media screen and (max-width: $phone) {
+      flex-direction: column;
+    }
+    #{$self}__card {
+      border: solid white 2px;
+      font-family: "Oswald", sans-serif;
+      background: #f5781811;
+      margin: 1rem;
+      padding: 1rem;
+      #{$self}__cta {
+        margin: 0rem;
+        color: white;
+      }
+      #{$self}__link {
+        color: $main;
+        margin: 0rem;
+      }
+      &:hover {
+        background: #f5781833;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.trabajo {
+  &__text {
+    color: $main;
+    font-size: 1.25rem;
+    transition: color 0.1s ease;
+    @media screen and (max-width: $phone) {
+      padding: 2rem 1rem 2rem 1rem;
+    }
+    &:hover {
+      color: black;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.footer {
+  margin: auto;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
