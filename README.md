@@ -1,3 +1,3 @@
 # Steel Structure Co. Landing Page
 
-Landing page for steel structure company, written in HTML, SCSS and JS
+A landing page for a steel structure company, built with Vanilla JS, HTML, and SCSS with BEM methodology.
